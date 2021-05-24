@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div>
+            <h1 id =question>questions</h1>
+            <input type = "radio" id ="first" name="answer"><label for="first" id="first-opt"></label><br>
+            <input type = "radio" id ="second" name="answer"><label for="second" id="second-opt"></label><br>
+            <input type = "radio" id ="third" name="answer"><label for="third" id="third-opt"></label><br>
+            <button type="button" id="prev" onclick = "onPrev()">Prev</button>
+            <button type="button" id="next" onclick ="onNext()">Next</button>
+        </div>
+        <script>
+            var questions = ['What is the height of Mt. Everest?','What is the capital of Nepal?']
+            var answers =[
+                            ['8848m','8880m','8888m'],
+                            ['Kathmandu','Pokhara','Butwal']]
+                        
+            
+            var i = 0;
+            document.getElementById('question').innerHTML = questions[i];
+            document.getElementById('first-opt').innerHTML = answers[i][0];
+            document.getElementById('second-opt').innerHTML = answers[i][1];
+            document.getElementById('third-opt').innerHTML = answers[i][2];
+            function onNext()
+            {
+                if(i<questions.length - 1)
+                {
+                i++;
+                }
+                else 
+                {
+                i = 0;
+                }
+                document.getElementById('question').innerHTML = questions[i];
+                document.getElementById('first-opt').innerHTML = answers[i][0];
+                document.getElementById('second-opt').innerHTML = answers[i][1];
+                document.getElementById('third-opt').innerHTML = answers[i][2];
+                
+            }
+
+
+            
+            function onPrev()
+            {
+            if (i>0)
+            {
+                i--;
+            }
+            else
+            {
+                i = questions.length - 1
+            }
+            document.getElementById('question').innerHTML = questions[i];
+            document.getElementById('first-opt').innerHTML = answers[i][0];
+            document.getElementById('second-opt').innerHTML = answers[i][1];
+            document.getElementById('third-opt').innerHTML = answers[i][2];
+            
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,215 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#products
+{
+    margin: 0 auto;
+    width: 90%;
+}
+#headin
+{
+    font-size: 500%;
+    color: yellowgreen;
+    text-align: center;
+}
+#main
+{
+    height: auto;
+    width: 760px;
+    border: 1px groove silver;
+    float: left;
+    border-radius: 3px;
+    margin: 150px 0 0 270px;
+    box-shadow: 2px 2px 10px black;
+}
+.display
+{
+    border: 1px groove black;
+    height: auto;
+    width: 230px;
+    float: left;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 7px gray;
+
+}
+
+    
+.display img
+{
+    height: 270px;
+    width: 220px;
+}
+
+.display h4
+{
+    margin: 10px 0 0 0;
+    padding-left: 5px;
+    font-family: Arial Narrow, sans-serif;
+    font-size: 18px;
+
+}
+.display h6
+{
+    margin: 2px 0 0 0;
+    padding-left: 5px;
+    text-decoration: line-through;
+    color: gray;
+    float: left;
+}
+.display h5
+{
+    float: left;
+    margin: 0 0 1px 0;
+    padding-left: 5px;
+    
+    color: black;
+}
+.hide-show
+{
+    display: none;
+    position: absolute;
+    margin-top: -30px;
+    margin-left: 40px;
+}
+
+.hide-show button
+{
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 17px;
+  
+}
+
+.display:hover .hide-show
+{
+    display: block;
+}
+
+#pseudo
+{
+    float: left;
+    width: 100%;
+}
+
+
+
+
+/*selectors----
+1.universal selector(*)
+2.Tag Selector(body,h1,p)
+3.Id selector(#name)
+4.Class selector(.name)
+5.Child Selector(ul li ul li a)
+6. multiple selector(h1,p,h2)
+7. siblings(div ~ h1/h1 ~ p) applies for all p
+8.adjacent sibling(h1+p) applies for only one p
+9.pseudo element selector(::)
+10.pseudo class selector(:hover/ :link/ :visited /:active)
+
+*/
+#pseudo > div >h1
+{
+    color: blue;
+}
+#pseudo h1 ~ p
+{
+    color: red;
+}
+/*
+#pseudo h1::first-letter 
+{
+    color: yellow;
+}
+this applies for all first letter of h1
+
+and this sign > helps for selecting only 1st letter of 1st h1
+*/
+#pseudo > h1::first-letter 
+{
+    color: yellow;
+}
+
+#pseudo p::first-line
+{
+    color: orange;
+}
+#pseudo p::first-letter
+{
+    font-size: 35px;
+}
+#pseudo p::before
+{
+    content: "Additional text";
+}
+#pseudo h1::before
+{
+    content: url(smiley.jpg);
+}
+#pseudo h1+p::before
+{
+    content: "Note:";
+    color: brown;
+}
+
+#pseudo a:link
+{
+    color: green;
+}
+#pseudo a:active
+{
+    color: black;
+}
+#pseudo a:visited
+{
+    color: pink;
+}
+ 
+/*animation and transation..........................................
+...................................................
+............................*/
+#anim_first
+{
+
+    float: left;
+}
+#anim_first
+{
+    background-color: red;
+    height: 100px;
+    width: 200px;
+    animation-name: my_animation;
+    animation-duration: 0.5s;
+   /* animation-iteration-count: 5;*/
+    animation-iteration-count: infinite;
+    transition: width 1s,height 1s;
+    transition-delay: 2s;
+    animation-delay: 2s;
+}
+@keyframes my_animation
+{
+    from{background-color: red;}
+    to{background-color: greenyellow;}
+}
+
+#anim_first h1
+{
+   /* transform: rotate(60deg);*/ /*skew rotateX rotateY rotateZ....etc*/
+    background-color: yellow;
+    width: 100px;
+    height: 50px;
+   /* transform: scale(2,2);*/
+   transform: translate(10px,10px);
+}
+#anim_first h1:hover
+{
+    transform: scale(2,2);
+}
+#anim_first:hover
+{
+    height: 2000px;
+    width: 250px;
+}
+
